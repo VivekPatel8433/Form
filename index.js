@@ -11,11 +11,18 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
     if(!firstName || !lastName || !dateOfBirth || !email || !password || !confirmPassword) {
-        message.textContent = "Invalid Credentials"; 
+        message.textContent = "Please fill out all the required fields"; 
     }
 
     if(password !== confirmPassword) {
         message.textContent = "Password Does Not Match";
     }
 
+    try{
+        const response = await fetch(   
+            method: "POST", 
+            Headers: 
+        ) 
+
+    }
 })
