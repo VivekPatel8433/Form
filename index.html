@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#E5C3D1] flex items-center justify-center min-h-screen">
+    <form method="POST" class="bg-[#E1F0C4] shadow-lg rounded-lg p-6 w-full max-w-lg md:max-w-2xl space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2">
+             <label for="firstName" class="mt-5">FirstName: </label>
+             <input type="text" id="firstName" name="firstName" required class="border bg-gray-400 mt-5 rounded-md">
+    
+             <label for="lastName" class="mt-5">LastName: </label>
+             <input type="text" id="lastName" name="LastName" required class="border bg-gray-400 mt-5 rounded-md">
+    
+            <label for="dateOfBirth" class="mt-5">Date Of Birth: </label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" class="border bg-gray-400 mt-5 rounded-md">
+       
+            <label for="email" class="mt-5">Email: </label>
+            <input type="text" id="email" name="Email" class="border bg-gray-400 mt-5 rounded-md">
+       
+            <label for="password" class="mt-5">Password: </label>
+            <input type="text" id="password" name="password" class="border bg-gray-400 mt-5 rounded-md">
+        
+           <label for="confirmPassword" class="mt-5">Confirm Password: </label>
+           <input type="text" id="confirmPassword" name="confirmPassword" class="border bg-gray-400 mt-5 rounded-md">
+      </div>
+      <div class="flex justify-center">
+         <p id="alert"></p>
+      </div>
+      <div class="flex justify-center mt-4">
+        <button type="submit" class="border bg-blue-400 mt-5 rounded-md px-4 py-2 hover:bg-green-400 transition mb-5">Register</button>
+      </div>
+  </form>
+    <script src="index.js"></script>
+</body>
+</html>
