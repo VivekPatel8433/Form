@@ -16,13 +16,26 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
     if(password !== confirmPassword) {
         message.textContent = "Password Does Not Match";
+    } else {
+        message.textContent = "";
     }
 
     try{
-        const response = await fetch(   
+        const response = await fetch("https://form-m9wq.onrender.com", {
             method: "POST", 
-            Headers: 
-        ) 
+            headers: {"Content-Type" : "application/json"}, 
+            body: JSON.stringify(firstName,lastName,dateOfBirth,email,password)
+        });
+        
+        const data = await response.json();
+        console.log("Server Response", data);
 
-    }
-})
+        if(response.ok) {
+            message.textContent = "Registration Successful, Welcome! ";
+        } else {
+            message.textContent = "Registration Failed, Please Try Again! "; 
+        }
+    }  catch(err) {
+        console.error("Server error", err);
+        }
+});
