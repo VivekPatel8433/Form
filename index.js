@@ -21,7 +21,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     }
 
     try { 
-        const response = await fetch("https://form-m9wq.onrender.com", {
+        const response = await fetch("https://form-m9wq.onrender.com/api/auth/register", {
             method: "POST", 
             headers: {"Content-Type" : "application/json"}, 
             body: JSON.stringify(firstName,lastName,dateOfBirth,email,password)
