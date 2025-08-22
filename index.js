@@ -20,7 +20,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         message.textContent = "";
     }
 
-    try{
+    try { 
         const response = await fetch("https://form-m9wq.onrender.com", {
             method: "POST", 
             headers: {"Content-Type" : "application/json"}, 
@@ -35,7 +35,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         } else {
             message.textContent = "Registration Failed, Please Try Again! "; 
         }
-    }  catch(err) {
+     } catch(err) {
         console.error("Server error", err);
         }
 });
