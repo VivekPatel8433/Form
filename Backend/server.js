@@ -7,6 +7,14 @@ const authRoutes = require('./routes/authroutes');
 const app = express();
 const PORT = process.env.PORT || 3002; 
 
+app.use(
+  cors({
+    origin: "https://vivekpatel8433.github.io",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 // Connect DB
 connectDB(); 
 
