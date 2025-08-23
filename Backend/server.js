@@ -15,6 +15,12 @@ app.use(
   })
 );
 
+// 1️⃣ Parse JSON bodies
+app.use(express.json());
+
+// 2️⃣ Parse URL-encoded bodies (for form submissions)
+app.use(express.urlencoded({ extended: true }));
+
 // Connect DB
 connectDB(); 
 
