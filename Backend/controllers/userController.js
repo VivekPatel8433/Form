@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs"); // bcrypt can also be used instead of js
 
 
 // Handles Registration 

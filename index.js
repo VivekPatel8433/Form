@@ -19,6 +19,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     } else {
         message.textContent = "";
     }
+    
 
     try { 
         const response = await fetch("https://form-m9wq.onrender.com/api/auth/register", {
@@ -31,7 +32,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         console.log("Server Response", data);
 
         if(response.ok) {
-            message.textContent = "Registration Successful, Welcome! ";
+            message.textContent = "Registration Successful, You Can Now Login! ";
         } else {
             message.textContent = "Registration Failed, Please Try Again! "; 
         }
