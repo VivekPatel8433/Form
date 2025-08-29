@@ -13,14 +13,15 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     if(!firstName || !lastName || !dateOfBirth || !email || !password || !confirmPassword) {
         message.textContent = "Please fill out all the required fields"; 
         message.style.color = "red";
+        return;
     }
 
     if(password !== confirmPassword) {
         message.textContent = "Password Does Not Match";
-    } else {
+        message.style.color = "red";
+        return;
+    } 
         message.textContent = "";
-    }
-    
 
     try { 
         const response = await fetch("https://form-m9wq.onrender.com/api/auth/register", {
