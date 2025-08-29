@@ -5,7 +5,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
-    const dateOfBirth = document.getElementById("dateOfBirth").value.trim();
+    const dateOfBirth = document.getElementById("dateOfBirth").value();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
@@ -35,10 +35,14 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
         if(response.ok) {
             message.textContent = "Registration Successful, You Can Now Login! ";
+            message.style.color = "green";
         } else {
             message.textContent = "User Already Exists!"; 
+             message.style.color = "red";
         }
      } catch(err) {
         console.error("Server error", err);
+        message.textContent = "Something went wrong. Try again later.";
+        message.style.color = "red";
         }
 });
