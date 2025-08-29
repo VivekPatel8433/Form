@@ -34,7 +34,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         if(response.ok) {
             message.textContent = "Registration Successful, You Can Now Login! ";
         } else {
-            message.textContent = "Registration Failed, Please Try Again! "; 
+            message.textContent = "User Already Exists!"; 
         }
      } catch(err) {
         console.error("Server error", err);
