@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
      <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.counter.dev/script.js" data-id="fdffda50-accc-4d8e-85be-e294a3946bba" data-utcoffset="-6"></script>
       <link rel="stylesheet" href="style.css">
+      <script>
+        tailwind.config = {
+         theme: {
+        extend: {
+        fontFamily: {
+          poppins: ['Poppins', 'sans-serif']
+               }
+              }
+           }
+          }
+    </script>
 </head>
 <body class="bg-[#E5C3D1] flex items-center justify-center min-h-screen">
+  <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold text-gray-800">Registration</h1>
+
+      <nav class="flex space-x-4">
+        <a href="https://vivekpatel8433.github.io/Portfolio-V1/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="text-blue-800 font-medium">
+          Vivek Patel
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
     <form method="POST" class="bg-[#E1F0C4] shadow-lg rounded-lg p-6 w-full max-w-lg md:max-w-2xl space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-2">
              <label for="firstName" class="mt-5">FirstName: </label>
@@ -38,6 +67,19 @@
       </div>
       
   </form>
+  <footer class=" fixed bottom-0 right-0 left-0 bg-[#DE9E36] shadow-inner mt-8 z-50 py-6"> 
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm">
+    
+    <p>&copy; 2025 Vivek Patel. All rights reserved.</p>
+    
+    <a href="https://vivekpatel8433.github.io/Portfolio-V1/" target="_blank" rel="noopener noreferrer"
+       class="text-blue-1000 hover:underline mt-2 sm:mt-0">
+      Visit My Portfolio
+    </a>
+    
+  </div>
+</footer>
+
     <script src="index.js"></script>
 </body>
 </html>
