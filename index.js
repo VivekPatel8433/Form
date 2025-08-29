@@ -12,6 +12,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
     if(!firstName || !lastName || !dateOfBirth || !email || !password || !confirmPassword) {
         message.textContent = "Please fill out all the required fields"; 
+        message.style.color = "red";
     }
 
     if(password !== confirmPassword) {
