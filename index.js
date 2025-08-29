@@ -5,7 +5,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
-    const dateOfBirth = document.getElementById("dateOfBirth").value();
+    const dateOfBirth = document.getElementById("dateOfBirth").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
