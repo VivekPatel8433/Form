@@ -47,10 +47,10 @@ const registerUser = async (req, res) => {
 // Handles Login
     const loginUser = async (req, res) => {
       try {
-        const { firstName, lastName, dateOfBirth, email, password } = req.body 
+        const { email, password } = req.body 
         
       // Validation 
-      if(!firstName || !lastName || !dateOfBirth || !email || !password) {
+      if( !email || !password) {
       return res.status(400).json({message: 'All fields are required'});
     } 
 

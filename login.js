@@ -27,7 +27,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         const response = await fetch("https://form-m9wq.onrender.com/api/auth/login", {
             method: "POST", 
             headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify({ firstName, lastName, dateOfBirth, email, password})
+            body: JSON.stringify({email, password})
         })
 
         const data = await response.json();
@@ -36,7 +36,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         if(response.ok) {
             window.location.href = "https://vivekpatel8433.github.io/Portfolio-V1/";
         } else {
-             message.textContent = "User Already Exists!"; 
+             message.textContent = data.message || "User Already Exists!"; 
              message.style.color = "red";
         }
     } catch(error) {
