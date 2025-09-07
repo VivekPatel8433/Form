@@ -1,4 +1,4 @@
-document.querySelector("form").addEventListener("submit", async (e) => {
+document.querySelector("#loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const message = document.getElementById("alert");
