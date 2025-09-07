@@ -23,28 +23,25 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     } 
         message.textContent = "";
 
-    try { 
-        const response = await fetch("https://form-m9wq.onrender.com/api/auth/register", {
+    try {
+        const response = await fetch("https://form-m9wq.onrender.com/api/auth/login", {
             method: "POST", 
-            headers: {"Content-Type" : "application/json"}, 
-            body: JSON.stringify({firstName,lastName,dateOfBirth,email,password})
-        });
-        
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify({ firstName, lastName, dateOfBirth, email, password})
+        })
+
         const data = await response.json();
         console.log("Server Response", data);
 
         if(response.ok) {
-            message.textContent = "Registration Successful, You Can Now Login! ";
-            message.style.color = "green";
+            window.location.href = "https://vivekpatel8433.github.io/Portfolio-V1/";
         } else {
-            message.textContent = "User Already Exists!"; 
+             message.textContent = "User Already Exists!"; 
              message.style.color = "red";
         }
-     } catch(err) {
-        console.error("Server error", err);
+    } catch(error) {
+        console.error("Server error", error);
         message.textContent = "Something went wrong. Try again later.";
         message.style.color = "red";
-        }
-
-        
-});
+    }
+})

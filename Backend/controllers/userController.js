@@ -44,4 +44,35 @@ const registerUser = async (req, res) => {
   }
 }; 
 
+// Handles Login
+    const loginUser = async (req, res) => {
+      try {
+        const { firstName, lastName, dateOfBirth, email, password } = req.body 
+        
+      // Validation 
+      if(!firstName || !lastName || !dateOfBirth || !email || !password) {
+      return res.status(400).json({message: 'All fields are required'});
+    } 
+
+    const checkUserExists = await User.findOne({email}); 
+    if(!checkUserExists) {
+      return res.status(401).json({message: "Invalid Credentials"});
+    }
+
+    const isMatch = await bcrypt.compare(password, User.password)
+    if(!isMatch) {
+      return res.status(401).json({message: "Invalid Credentials"});
+    }
+      } catch(error) {
+        return res.status(500).json({message: "Server error", error});
+      }
+
+    }
+
+
+
+
+
+
+module.exports = { loginUser }
 module.exports = { registerUser }; 
