@@ -35,7 +35,6 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
         if(response.ok) {
             window.location.href = "https://vivekpatel8433.github.io/Portfolio-V1/";
-            message.textContent = data;
         } else {
              message.textContent = "User Already Exists!"; 
              message.style.color = "red";

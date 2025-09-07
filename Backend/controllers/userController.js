@@ -63,6 +63,10 @@ const registerUser = async (req, res) => {
     if(!isMatch) {
       return res.status(401).json({message: "Invalid Credentials"});
     }
+
+    res.json({
+      email: User.email
+    })
       } catch(error) {
         return res.status(500).json({message: "Server error", error});
       }
