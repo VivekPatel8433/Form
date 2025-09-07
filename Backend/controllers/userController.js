@@ -70,9 +70,4 @@ const registerUser = async (req, res) => {
     }
 
 
-
-
-
-
-module.exports = { loginUser }
-module.exports = { registerUser }; 
+module.exports = { registerUser, loginUser }; 
