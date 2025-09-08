@@ -33,7 +33,8 @@ document.querySelector("#loginForm").addEventListener("submit", async (e) => {
         const data = await response.json();
         console.log("Server Response", data);
 
-        if(response.ok) {
+        if(response.ok && data.token) {
+            sessionStorage.setItem("jwt", data.token)
             window.location.href = "https://vivekpatel8433.github.io/Portfolio-V1/";
         } else {
              message.textContent = data.message || "User Already Exists!"; 

@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const bcrypt = require("bcryptjs"); // bcrypt can also be used instead of js
+const jwt = require("jsonwebtoken"); 
 
+const JWT_SECRET = process.env.JWT_SECRET || "LOGIN2025"
 
 // Handles Registration 
 const registerUser = async (req, res) => {
@@ -30,10 +32,22 @@ const registerUser = async (req, res) => {
         password : hashedPassword
     });
 
+    // JWT TOKEN
+      const payload = {
+        id: User.id,
+        email: User.email
+      }; 
+
+      const token = jwt.sign(
+        payload, 
+        JWT_SECRET, 
+        { expiresIn : "1hr"} );
+
     // Send success response
      res.status(201).json({
         message:'User Registered Successfully',
         user: {
+            token,
             id: newUser._id,
             email: newUser.email 
         }
